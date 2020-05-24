@@ -1,0 +1,20 @@
+language: python
+
+sudo: required
+python:
+  - "3.7"
+  - "3.6"
+addons:
+  chrome: stable
+
+before_script:
+  - wget https://chromedriver.storage.googleapis.com/75.0.3770.140/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip -d .
+  - chmod +x ./chromedriver
+  - export PATH=`pwd`:$PATH
+
+install: pip install -r requirements.txt
+script:
+  - py.test --language=en
+  - py.test -v --tb=line --language=en -m need_review
+
