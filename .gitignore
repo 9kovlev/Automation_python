@@ -1,0 +1,13 @@
+# Byte-compiled / optimized / DLL file
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Venv
+*venv/
+
+# IDEA
+/.idea/
+
+# Executables
+**/*.exe
